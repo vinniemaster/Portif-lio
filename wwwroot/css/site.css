@@ -1,0 +1,33 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.anime{
+    opacity: 0;
+    transform: translate3d(-100px,0,0);
+    transition: 2s;
+}
+
+.anime-start {
+    opacity: 1;
+    transform: translate3d(0,0,0);
+}
+.imgProfilePic {
+    width: 250px;
+    border-radius: 100%;
+}

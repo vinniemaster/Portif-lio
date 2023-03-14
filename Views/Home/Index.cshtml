@@ -1,0 +1,124 @@
+﻿@using Portifólio.Models;
+@{
+    ViewData["Title"] = "Vinícius Lima";
+    var git = GHConnect.GetProfile();
+}
+
+<div class="text-center">
+    <div class="anime">
+        <h1 class="display-4">Olá!</h1>
+        <h2>Meu nome é Vinícius Lima</h2>
+        <h2>Bem-Vindo ao meu Portifólio</h2>
+        <img class="img imgProfilePic" src="~/img/profile.jpg">
+    </div>
+    <div class="anime">
+        <h3>Meus Projetos no Github:</h3>
+
+        @foreach(var repo in git){
+
+            <h4><a href=@repo.html_url>@repo.name</a></h4>
+            <p>@repo.description</p>
+        }
+    </div>
+    <div class="row">
+        <div class="anime">
+            <h3>Minhas qualificações:</h3>
+            <div class="progress">
+               <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 100%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">C#/ASP.NET</div>
+            </div>
+            <br/>
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 75%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">HTML/CSS</div>
+            </div>
+            <br />
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 75%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">JavaScript/jquery</div>
+            </div>
+            <br />
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">SQL</div>
+            </div>
+            <br />
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">APIs/WebServices</div>
+            </div>
+            <br />
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 75%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">Windows Server/Linux</div>
+            </div>
+            <br />
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 75%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">Inglês</div>
+            </div>
+        </div>
+        
+            
+    </div>
+    <br />
+    <div class="anime">
+        <h3>Minhas experiências profissionais:</h3>
+        <div class="row">
+            <h4>SP Intervention</h4>
+            <h5>Período: Fevereiro/22 – Atual</h5>
+            <p>
+                Atuando como desenvolvedor C# MVC realizando correções nos sistemas corporativos e melhorias, realizando estorias em novos projetos, utilizando as tecnologias: Javascript e JQuery, .NET MVC, SQL, Oracle SQL, GIT e Scrum
+            </p>
+        </div>
+        <div class="row">
+            <h4>Stefanini Brasil</h4>
+            <h5>Período: Dezembro/20 – Fevereiro/22</h5>
+            <p>
+                Atuei como suporte sênior bilíngue, realizando administração dos ativos, como celular e computadores, administrando usuários, projetos, interfaces de admin do AD e MDM de celular Prestando serviços á Colgate Palmolive do Brasil
+            </p>
+        </div>
+        <div class="row">
+            <h4>Global Hitss</h4>
+            <h5>Período: Janeiro/19 – Dezembro/20</h5>
+            <p>
+                Atuei como Suporte VIP – Analista de suporte N2 bilíngue realizando troubleshooting, formatação de máquinas e configuração de computadores e celulares para a secretaria executiva e presidência
+                Prestando serviços a UHG Brasil (Amil)
+            </p>
+        </div>
+    </div>
+    <br/>
+    <div class="anime">
+        <h3>Graduações e Cursos:</h3>
+        <div class="row">
+            <h4>Análise e desenvolvimento de sistemas</h4>
+            <h4>FMU – Faculdades Metropolitanas Unidas</h4>
+            <h5>Período: 2021-2023</h5>
+        </div>
+        <br />
+        <div class="row">
+            <h4>Sistemas de telecomunicações e Redes</h4>
+            <h4>FMU – Faculdades Metropolitanas Unidas</h4>
+            <h5>Período: 2016-2018</h5>
+        </div>
+        <br />
+        <div class="row">
+            <h4>Inglês</h4>
+            <h4>Cultura Ingles</h4>
+            <h5>Período: 4 anos</h5>
+        </div>
+        <br />
+        <div class="row">
+            <h4>MySQL</h4>
+            <h4>Impacta</h4>
+            <h5>Período: 60 Horas</h5>
+        </div>
+        <br />
+        <div class="row">
+            <h4>Python</h4>
+            <h4>Agit Informática</h4>
+            <h5>Período: 60 Horas</h5>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $(".anime").removeClass("anime").addClass("anime anime-start");
+        });
+    </script>
+}
