@@ -15,14 +15,30 @@
         <p>Meu objetivo é atuar como programador ASP .NET, focado em novos projetos e melhorias, assim como ajudar nas correções de bugs, me dedico ao máximo em tudo o que faço, e gosto de demonstrar esforço, independente das circunstâncias.</p>
     </div>
     <div class="anime">
+        <div class="social-media">
+            <a href="https://github.com/vinniemaster" style="--i:4"><i class='bx bxl-github'></i></a>
+            <a href="https://www.linkedin.com/in/vin%C3%ADcius-lima-072025150/" style="--i:5"><i class='bx bxl-linkedin-square'></i></a>    
+            <a href="./pdf/Curriculo-VLC.pdf" style="--i:6"><i class='bx bxs-file-doc'></i></a>
+        </div>
+@*        <button type="button" onclick="window.location.href='./pdf/Curriculo-VLC.pdf'" class="btn btn-primary btn-sm btn-cv">Baixar CV</button>*@
+    </div>
+    <div class="anime">
         <h3>Meus Projetos no Github:</h3>
 
         @foreach(var repo in git){
 
-            <h4><a href=@repo.html_url>@repo.name</a></h4>
-            <p>@repo.description</p>
+            <div class="card">
+                <div class="card-body">
+                    <h4>@repo.name</h4>
+                    <p>@repo.description</p>
+                    <button type="button" onclick="window.location.href='@repo.html_url'" class="btn btn-primary btn-sm">Acessar repositório</button>
+                    
+                </div>
+            </div>
+            <br />
         }
     </div>
+    <br />
     <div class="row">
         <div class="anime">
             <h3>Minhas qualificações:</h3>
@@ -120,8 +136,41 @@
 
 @section Scripts{
     <script>
-        $(document).ready(function () {
-            $(".anime").removeClass("anime").addClass("anime anime-start");
-        });
+        //function animeScroll() {
+        //    $(".anime").removeClass("anime").addClass("anime anime-start")
+        //});
+
+        //$(document).scroll(function(){
+        //    animeScroll();
+        //})
+
+        function ex () {
+            var $target = $('.anime'),
+                animationClass = 'anime-start',
+                offset = $(window).height() * 3 / 4;
+
+            function animeScroll() {
+                var documentTop = $(document).scrollTop();
+
+                $target.each(function () {
+                    var itemTop = $(this).offset().top;
+                    if (documentTop > itemTop - offset) {
+                        $(this).addClass(animationClass);
+                    }
+                    else {
+                        $(this).removeClass(animationClass);
+                    }
+                })
+            }
+            animeScroll();
+
+            $(document).scroll(function () {
+                animeScroll();
+            })
+        };
+
+        ex();
+
+
     </script>
 }
