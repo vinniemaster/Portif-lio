@@ -12,7 +12,7 @@
         <img class="img imgProfilePic" src="~/img/profile.jpg">
     </div>
     <div class="anime">
-        <p>Meu objetivo é atuar como programador ASP .NET, focado em novos projetos e melhorias, assim como ajudar nas correções de bugs, me dedico ao máximo em tudo o que faço, e gosto de demonstrar esforço, independente das circunstâncias.</p>
+        <p>Consigo minhas atividades em diversas tecnologias. Profissionalmente tenho mais de um ano de experiência, e programo desde os 18 anos. Em meus projetos, atuo no front e backend, banco de dados, APIs, assim como ajudar nas correções de bugs, me dedico ao máximo em tudo o que faço, e gosto de demonstrar esforço, independente das circunstâncias.</p>
     </div>
     <div class="anime">
         <div class="social-media">
@@ -22,56 +22,85 @@
             <a href="./pdf/Curriculo-VLC.pdf" style="--i:6"><i class='bx bxs-file-doc'></i></a>
         </div>
     </div>
+    <br />
+    <div class="row">
+        <div class="anime">
+            <h3>Tecnologias que Utilizo:</h3>
+            <div class="card cu" style="width: 18rem;">
+                <div class="card-body">
+                    <img class="card-img-top" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" />
+                    <p class="card-text">Utilizo o C# como linguagem base para o desenvolvimento back-end em meus projetos, consigo desenvolver integrações de API, WebServices, Modelagem de banco de dados, integrações de documentos, CRUDs e tudo que for necessário.</p>
+                </div>
+            </div>
+            <div class="card cu" style="width: 18rem;">
+                <div class="card-body">
+                    <img class="card-img-top" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" />
+                    <p class="card-text">Utilizo o .NET como FrameWork para o desenvolvimento back-end em meus projetos, consigo desenvolver integrações de API, WebServices, Modelagem de banco de dados, integrações de documentos, CRUDs e tudo que for necessário.</p>
+                </div>
+            </div>
+            <div class="card cu" style="width: 18rem;">
+                <div class="card-body">
+                    <img class="card-img-top" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain-wordmark.svg" />
+                    <p class="card-text">Em meus projetos tenho vivência sólida com o SQL Server, assim como o Oracle SQL e MySQL.</p>
+                </div>
+            </div>
+            <div class="card cu" style="width: 18rem;">
+                <div class="card-body">
+                    <img class="card-img-top" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" />
+                    <p class="card-text">Utilizo como base o Git para controle de versionamento, já realizei projetos com o Azure DevOps e GitHub.</p>
+                </div>
+            </div>
+            <div class="card cu" style="width: 18rem;">
+                <div class="card-body">
+                    <img class="card-img-top" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />
+                    <p class="card-text">Tenho o conhecimento do Javascript puro para conseguir debugar problemas em FrameWorks como Jquery, ReactJS e AngularJS assim como desenvolver melhorias em projetos legados.</p>
+                </div>
+            </div>
+            <div class="card cu" style="width: 18rem;">
+                <div class="card-body">
+                    <img class="card-img-top" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original-wordmark.svg" />
+                    <p class="card-text">Desenvolvo com o JQuery para realizar automação de processos, chamadas de API, criação de tabelas e tudo o que for necessário.</p>
+                </div>
+            </div>
+            <div class="card cu" style="width: 18rem;">
+                <div class="card-body">
+                    <img class="card-img-top" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" />
+                    <p class="card-text">Utilizo o ReactJS e Native em desenvolvimento de front-end e apps.</p>
+                </div>
+            </div>
+            <div class="card cu" style="width: 18rem;">
+                <div class="card-body">
+                    <img class="card-img-top" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />
+                    <p class="card-text">Utilizo o HTML no desenvolvimento de front-end.</p>
+                </div>
+            </div>
+            <div class="card cu" style="width: 18rem;">
+                <div class="card-body">
+                    <img class="card-img-top" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" />
+                    <p class="card-text">Utilizo o CSS em desenvolvimento de front-end.</p>
+                </div>
+            </div>
+        </div>
+        
+            
+    </div>
+    <br />
     <div class="anime">
         <h3>Meus Projetos no Github:</h3>
 
-        @foreach(var repo in git){
+        @foreach (var repo in git)
+        {
 
             <div class="card">
                 <div class="card-body">
                     <h4>@repo.name</h4>
                     <p>@repo.description</p>
                     <button type="button" onclick="window.location.href='@repo.html_url'" class="btn btn-primary btn-sm">Acessar repositório</button>
-                    
+
                 </div>
             </div>
             <br />
         }
-    </div>
-    <br />
-    <div class="row">
-        <div class="anime">
-            <h3>Minhas qualificações:</h3>
-            <div class="progress">
-               <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 100%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">C#/ASP.NET</div>
-            </div>
-            <br/>
-            <div class="progress">
-                <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 75%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">HTML/CSS</div>
-            </div>
-            <br />
-            <div class="progress">
-                <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 75%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">JavaScript/jquery</div>
-            </div>
-            <br />
-            <div class="progress">
-                <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">SQL</div>
-            </div>
-            <br />
-            <div class="progress">
-                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">APIs/WebServices</div>
-            </div>
-            <br />
-            <div class="progress">
-                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 75%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">Windows Server/Linux</div>
-            </div>
-            <br />
-            <div class="progress">
-                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 75%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">Inglês</div>
-            </div>
-        </div>
-        
-            
     </div>
     <br />
     <div class="anime">

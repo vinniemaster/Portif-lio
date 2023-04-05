@@ -45,3 +45,11 @@ body {
     margin: 0px 15px 25px 0;
     transition: .5s ease;
 }
+
+.cu {
+    align-items: center;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
