@@ -46,10 +46,14 @@ body {
     transition: .5s ease;
 }
 
-.cu {
+.lang {
     align-items: center;
     display: inline-block;
     vertical-align: top;
     margin-left: 10px;
     margin-bottom: 10px;
+}
+
+i {
+    font-size: 40px
 }

@@ -1,10 +1,11 @@
 ﻿@using Portifólio.Models;
 @{
     ViewData["Title"] = "Vinícius Lima";
-    var git = GHConnect.GetProfile();
+    var git = GHConnect.GetProfile();    
 }
 
 <div class="text-center">
+    
     <div class="anime">
         <h1 class="display-4">Olá!</h1>
         <h2>Meu nome é Vinícius Lima</h2>
@@ -29,55 +30,55 @@
     <div class="row">
         <div class="anime">
             <h3>Tecnologias que Utilizo:</h3>
-            <div class="card cu" style="width: 18rem;">
+            <div class="card lang" style="width: 18rem;">
                 <div class="card-body">
                     <img class="card-img-top" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" />
                     <p class="card-text">Utilizo o C# como linguagem base para o desenvolvimento back-end em meus projetos, consigo desenvolver integrações de API, WebServices, Modelagem de banco de dados, integrações de documentos, CRUDs e tudo que for necessário.</p>
                 </div>
             </div>
-            <div class="card cu" style="width: 18rem;">
+            <div class="card lang" style="width: 18rem;">
                 <div class="card-body">
                     <img class="card-img-top" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" />
                     <p class="card-text">Utilizo o .NET como FrameWork para o desenvolvimento back-end em meus projetos, consigo desenvolver integrações de API, WebServices, Modelagem de banco de dados, integrações de documentos, CRUDs e tudo que for necessário.</p>
                 </div>
             </div>
-            <div class="card cu" style="width: 18rem;">
+            <div class="card lang" style="width: 18rem;">
                 <div class="card-body">
                     <img class="card-img-top" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain-wordmark.svg" />
                     <p class="card-text">Em meus projetos tenho vivência sólida com o SQL Server, assim como o Oracle SQL e MySQL.</p>
                 </div>
             </div>
-            <div class="card cu" style="width: 18rem;">
+            <div class="card lang" style="width: 18rem;">
                 <div class="card-body">
                     <img class="card-img-top" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" />
                     <p class="card-text">Utilizo como base o Git para controle de versionamento, já realizei projetos com o Azure DevOps e GitHub.</p>
                 </div>
             </div>
-            <div class="card cu" style="width: 18rem;">
+            <div class="card lang" style="width: 18rem;">
                 <div class="card-body">
                     <img class="card-img-top" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />
                     <p class="card-text">Tenho o conhecimento do Javascript puro para conseguir debugar problemas em FrameWorks como Jquery, ReactJS e AngularJS assim como desenvolver melhorias em projetos legados.</p>
                 </div>
             </div>
-            <div class="card cu" style="width: 18rem;">
+            <div class="card lang" style="width: 18rem;">
                 <div class="card-body">
                     <img class="card-img-top" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original-wordmark.svg" />
                     <p class="card-text">Desenvolvo com o JQuery para realizar automação de processos, chamadas de API, criação de tabelas e tudo o que for necessário.</p>
                 </div>
             </div>
-            <div class="card cu" style="width: 18rem;">
+            <div class="card lang" style="width: 18rem;">
                 <div class="card-body">
                     <img class="card-img-top" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" />
                     <p class="card-text">Utilizo o ReactJS e Native em desenvolvimento de front-end e apps.</p>
                 </div>
             </div>
-            <div class="card cu" style="width: 18rem;">
+            <div class="card lang" style="width: 18rem;">
                 <div class="card-body">
                     <img class="card-img-top" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />
                     <p class="card-text">Utilizo o HTML no desenvolvimento de front-end.</p>
                 </div>
             </div>
-            <div class="card cu" style="width: 18rem;">
+            <div class="card lang" style="width: 18rem;">
                 <div class="card-body">
                     <img class="card-img-top" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" />
                     <p class="card-text">Utilizo o CSS em desenvolvimento de front-end.</p>
@@ -98,6 +99,18 @@
                 <div class="card-body">
                     <h4>@repo.name</h4>
                     <p>@repo.description</p>
+                    <p>Tecnologias:</p>
+                    <div class="techicons">
+                        @foreach (var language in GHConnect.GetLanguages(repo.languages_url))
+                        {
+                            if (language.Key != "SCSS")
+                            {
+                                <i class='devicon-@GHConnect.GetIcon(language.Key)'></i>
+                            }
+
+                        }
+
+                    </div>
                     <button type="button" onclick="window.location.href='@repo.html_url'" class="btn btn-primary btn-sm">Acessar repositório</button>
                     @if(!string.IsNullOrEmpty(repo.homepage.ToString()))
                     {

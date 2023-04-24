@@ -5,6 +5,9 @@ namespace Portifólio.Models
 {
     public class GHConnect
     {
+        
+        
+
         public static List<GH_repo> GetProfile()
         {
             HttpClient http = new HttpClient();
@@ -23,7 +26,55 @@ namespace Portifólio.Models
             }
             return dados_list;
         }
+        public static string GetIcon(string language)
+        {
+            var languagesXicons = new Dictionary<string, string>();
+            languagesXicons.Add("TypeScript", "typescript-plain colored");
+            languagesXicons.Add("HTML", "html5-plain-wordmark colored");
+            languagesXicons.Add("CSS", "css3-plain-wordmark colored");
+            languagesXicons.Add("C#", "csharp-plain colored");
+            languagesXicons.Add("JavaScript", "javascript-plain colored");
+            languagesXicons.Add("Java", "java-plain-wordmark colored");
+
+            foreach (var lang in languagesXicons)
+            {
+
+                if(language == lang.Key)
+                {
+                    return lang.Value;
+                }
+            }
+
+            return "";
+        }
+
+        public static Dictionary<string, string> GetLanguages(string URL)
+        {
+            HttpClient http = new HttpClient();
+            http.DefaultRequestHeaders.UserAgent.TryParseAdd("request");
+            var response = http.GetAsync(URL).Result;
+            var dados_dict = new Dictionary<string, string>();
+
+
+            if (response.IsSuccessStatusCode)
+            {
+                foreach (var item in JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content.ReadAsStringAsync().Result))
+                {
+                    dados_dict.Add(item.Key, item.Value);
+                }
+
+            }
+            return dados_dict;
+        }
+
+
+
     }
+
+ 
+
+
+
     public class GH_props
     {
         public string login { get; set; }
