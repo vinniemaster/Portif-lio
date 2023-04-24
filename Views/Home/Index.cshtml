@@ -12,7 +12,10 @@
         <img class="img imgProfilePic" src="~/img/profile.jpg">
     </div>
     <div class="anime">
-        <p>Consigo realizar minhas atividades em diversas tecnologias. Profissionalmente tenho mais de um ano de experiência, e programo desde os 18 anos. Em meus projetos, atuo no front e backend, banco de dados, APIs, assim como ajudar nas correções de bugs, me dedico ao máximo em tudo o que faço, e gosto de demonstrar esforço, independente das circunstâncias.</p>
+        <p>Consigo realizar minhas atividades em diversas tecnologias. Profissionalmente tenho mais de um ano de experiência em programação. Programo desde os 18 anos, e possuo experiência na área de suporte onde também foi minha base para ter noções de tecnologia.</p>
+        <p>Em meus projetos, atuo no front e backend, banco de dados, APIs, assim como ajudar nas correções de bugs. Meus projetos pessoais, é possível visualizar-los arrastando para baixo e meus projetos profissionais, posso explicar em um bate-papo.</p>
+        <p>Se desejar saber os detalhes técnicos utilizados neste portifólio e os projetos em produção, <a href="#" id="detalhestecbtn">clique aqui</a></p>
+        <p id="detalhestec"></p>
     </div>
     <div class="anime">
         <div class="social-media">
@@ -96,7 +99,10 @@
                     <h4>@repo.name</h4>
                     <p>@repo.description</p>
                     <button type="button" onclick="window.location.href='@repo.html_url'" class="btn btn-primary btn-sm">Acessar repositório</button>
-
+                    @if(!string.IsNullOrEmpty(repo.homepage.ToString()))
+                    {
+                        <button type="button" onclick="window.location.href='@repo.homepage'" class="btn btn-primary btn-sm">Acessar Site</button>
+                    }
                 </div>
             </div>
             <br />
@@ -192,6 +198,10 @@
 
         ex();
 
-
+        $(document).ready(function(){
+            $("#detalhestecbtn").on("click", function(){
+                $("#detalhestec").html("Utilizo como servidor um PC básico rodando o Windows Server 2019<p>Máquina: Core i5-3470, 4GB de RAM e 500GB de HD</p><p>Todos os sites e este portífolio estão hospedados neste servidor com o runtime do ASP .NET Core e SQL Server, assim como a configuração IIS e do DNS para apontamento dos sites.</p><p>Tudo configurado por mim mesmo :) </p>")
+            });
+        });
     </script>
 }
