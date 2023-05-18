@@ -97,34 +97,41 @@
     <br />
     <div class="anime">
         <h3>Meus Projetos no Github:</h3>
-
-        @foreach (var repo in git)
-        {
-
-            <div class="card">
-                <div class="card-body">
-                    <h4>@repo.name</h4>
-                    <p>@repo.description</p>
-                    <p>Tecnologias:</p>
-                    <div class="techicons">
-                        @foreach (var language in GHConnect.GetLanguages(repo.languages_url))
-                        {
-                            if (language.Key != "SCSS")
+        
+        @if(git.Count != 0)
+        {            
+            foreach (var repo in git)
+            {
+            
+                <div class="card">
+                    <div class="card-body">
+                        <h4>@repo.name</h4>
+                        <p>@repo.description</p>
+                        <p>Tecnologias:</p>
+                        <div class="techicons">
+                            @foreach (var language in GHConnect.GetLanguages(repo.languages_url))
                             {
-                                <i class='devicon-@GHConnect.GetIcon(language.Key)' title="@language.Key"></i>
+                                if (language.Key != "SCSS")
+                                {
+                                    <i class='devicon-@GHConnect.GetIcon(language.Key)' title="@language.Key"></i>
+                                }
+
                             }
 
+                        </div>
+                        <button type="button" onclick="window.location.href='@repo.html_url'" class="btn btn-primary btn-sm">Acessar repositório</button>
+                        @if(!string.IsNullOrEmpty(repo.homepage.ToString()))
+                        {
+                            <button type="button" onclick="window.location.href='@repo.homepage'" class="btn btn-primary btn-sm">Acessar Site</button>
                         }
-
                     </div>
-                    <button type="button" onclick="window.location.href='@repo.html_url'" class="btn btn-primary btn-sm">Acessar repositório</button>
-                    @if(!string.IsNullOrEmpty(repo.homepage.ToString()))
-                    {
-                        <button type="button" onclick="window.location.href='@repo.homepage'" class="btn btn-primary btn-sm">Acessar Site</button>
-                    }
                 </div>
-            </div>
-            <br />
+                <br />
+            }
+        }
+        else
+        {
+            <p class="gitoff">A API do GitHub parou de responder, há um limite de acessos... Tente novamente em alguns minutos</p>
         }
     </div>
     <br />
