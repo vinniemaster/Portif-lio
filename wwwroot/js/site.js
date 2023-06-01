@@ -1,4 +1,32 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿function Contato() {
+    $('html, body').animate({
+        scrollTop: $(".apresentacao").offset().top
+    }, 200);
+}
 
-// Write your JavaScript code.
+function Tecnologias() {
+    $('html, body').animate({
+        scrollTop: $(".tech").offset().top
+    }, 200);
+}
+
+function Projetos() {
+    $('html, body').animate({
+        scrollTop: $(".github").offset().top
+    }, 200);
+}
+
+function Experiencias() {
+    $('html, body').animate({
+        scrollTop: $(".exp").offset().top
+    }, 200);
+}
+
+function Cursos() {
+    $('html, body').animate({
+        scrollTop: $(".courses").offset().top
+    }, 200);
+}
+
+
+

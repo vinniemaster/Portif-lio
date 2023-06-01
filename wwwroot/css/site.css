@@ -5,6 +5,7 @@ html {
 @media (min-width: 768px) {
   html {
     font-size: 16px;
+
   }
 }
 
@@ -14,7 +15,11 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-top: 55px;
+    margin-bottom: 60px;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(0deg,#232526,#414345);
+    color: #fff;
 }
 
 .anime{
@@ -40,23 +45,45 @@ body {
     border: 2px solid ;
     border-radius: 50%;
     font-size: 25px;
-    color: #000f;
+    color: #fff;
     text-decoration: none;
     margin: 0px 15px 25px 0;
     transition: .5s ease;
 }
 
-.lang {
-    align-items: center;
+.lang-card {
+    background: linear-gradient(0deg,#232526,#414345);
+    padding: 5px 5px 5px 5px;
+    border-radius: 10px 10px;
+    border: 1px solid white;
+    width: 18em;
+    height: 25em;
     display: inline-block;
     vertical-align: top;
-    margin-left: 10px;
-    margin-bottom: 10px;
+    position: relative;
+    margin-right: 2px;
+    margin-bottom: 5px;
 }
-
+.lang-card .lc-body {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.lang-card .lc-body img{
+    width: 65%;
+}
 i {
     font-size: 40px
 }
 .anime .gitoff{
     color: #ccc;
+}
+
+.footer{
+    background: #000;
+}
+
+
+.navbar-nav .nav-item a:hover{
+    text-decoration: underline;
 }
